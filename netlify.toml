@@ -1,3 +1,10 @@
 [build]
   publish = "site"
   functions = "netlify/functions"
+
+# The chat on the site calls /api/chat.php; send it to the AI function
+[[redirects]]
+  from = "/api/chat.php"
+  to = "/.netlify/functions/chat"
+  status = 200
+  force = true
